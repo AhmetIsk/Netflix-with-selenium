@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="img/logo.png" />
+    <title>Netflix</title>
+  </head>
+  <body>
+    <div class="upper">
+      <div class="logo">
+        <a href="#">
+          <img src="img/Netflix-Logo.png" class="img-logo" />
+        </a>
+      </div>
+      <div class="login-div">
+        <form class="login">
+          <h1>Oturum Aç</h1>
+          <div class="input-text">
+            <input
+              type="text"
+              id="inputEmail"
+              name="email"
+              placeholder="E-posta veya telefon numarası"
+              onfocus="inputOnFocus(this)"
+              onblur="inputOnBlur(this)"
+            />
+            <div class="warning-input" id="warningEmail">
+              Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
+            </div>
+          </div>
+
+          <div class="input-text">
+            <input
+              type="password"
+              id="inputPassword"
+              name="password"
+              placeholder="Parola"
+              onfocus="inputOnFocus(this)"
+              onblur="inputOnBlur(this)"
+            />
+            <div class="warning-input" id="warningPassword">
+              Parolanız 4 ila 60 karakter olmalıdır.
+            </div>
+          </div>
+
+          <div>
+            <button class="signin-button">Oturum Aç</button>
+          </div>
+          <div class="remember-flex">
+            <div>
+              <input type="checkbox" />
+              <label class="color_text">Beni hatırla</label>
+            </div>
+            <div class="help">
+              <a class="color_text" href="#">Yardım ister misiniz?</a>
+            </div>
+          </div>
+          <div class="login-face">
+            <img src="img/fb-icon.png" height="20" /><a
+              href="#"
+              class="color_link log_face"
+              >Facebook ile Oturum Aç</a
+            >
+          </div>
+          <div class="new-members">
+            Netflix'e katılmak ister misiniz?
+            <a href="#" class="signup-link">Şimdi kaydolun</a>.
+          </div>
+          <div class="protection color_link help">
+            Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA
+            tarafından korunuyor.
+          </div>
+          <div class="protection color_link help">
+            <a href="#">Daha fazlasını öğrenin.</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="bottom-width">
+        Sorularınız mı var?
+        <a href="tel:1-844-542-4813" class="tel-link">0850-390-7444</a>
+        numaralı telefonu arayın
+        <div>
+          <ul class="bottom-flex">
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> SSS </a>
+            </li>
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> Yardım Merkezi </a>
+            </li>
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> Kullanım Koşulları </a>
+            </li>
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> Gizlilik </a>
+            </li>
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> Çerez Tercihleri </a>
+            </li>
+            <li class="list-bottom">
+              <a href="#" class="link-bottom"> Kurumsal Bilgiler </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <select class="fa select-language">
+            <option>&#xf0ac; &nbsp;&nbsp;&nbsp;Türk&ccedil;e</option>
+            <option>&#xf0ac; &nbsp;&nbsp;&nbsp;English</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
