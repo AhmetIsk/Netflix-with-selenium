@@ -1,0 +1,247 @@
+body {
+  background: #fff;
+  color: #1c1e21;
+  direction: ltr;
+  line-height: 1.34;
+  margin: 0;
+  padding: 0;
+  unicode-bidi: embed;
+  border: 0;
+}
+
+body,
+button,
+input,
+label,
+select,
+td,
+textarea {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+#pageheader {
+  background: #365899;
+  color: #fff;
+  direction: ltr;
+  line-height: 1.34;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+div {
+  display: block;
+}
+
+.form_row {
+  zoom: 1;
+  padding: 0 0 8px 0;
+  text-align: left;
+}
+
+.form_row .login_form_label {
+  display: block;
+  float: left;
+  padding: 3px 0;
+  width: 100px;
+}
+
+.form_row label {
+  color: #606770;
+  cursor: default;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.form_row .inputtext,
+.inputpassword {
+  direction: ltr;
+  width: 175px;
+}
+
+html ._55r1 {
+  background: #ffffff
+    url("https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/YQNfPR9MJfx.png") repeat-x;
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  height: 22px;
+  line-height: 16px;
+  padding: 0 8px;
+  vertical-align: middle;
+}
+
+#homelink {
+  background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/qYG_pvNhLC1.png")
+    no-repeat 10px 50%;
+  color: #fff;
+  margin: 0;
+  padding: 8px 10px 8px 30px;
+}
+
+#content {
+  float: none;
+  padding: 15px 30px 20px 30px;
+  width: auto;
+  border: 0 solid white;
+}
+
+#loginform {
+  clear: left;
+  margin: auto;
+  padding: 15px 0;
+  text-align: left;
+  width: 380px;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+#buttons {
+  padding: 5px 0 0 100px;
+  text-align: left;
+}
+
+#buttons .uiButton {
+  margin-right: 2px;
+}
+
+#buttons label {
+  float: none;
+  width: auto;
+}
+
+.uiButton {
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.uiButtonLarge,
+.uiButtonLarge .uiButtonText,
+.uiButtonLarge input {
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.uiButtonConfirm {
+  background-color: #4267b2;
+  border-color: #29487d;
+}
+
+.uiButton,
+.uiButtonSuppressed:active,
+.uiButtonSuppressed:focus,
+.uiButtonSuppressed:hover {
+  border: 1px solid #ccd0d5;
+}
+
+.uiButtonConfirm input {
+  color: #fff;
+  background-color: #4267b2;
+  border-color: #29487d;
+}
+
+.uiButton input {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  padding: 0;
+  white-space: nowrap;
+}
+
+._4jy2 {
+  background-color: #42b72a;
+  border-color: #42b72a;
+}
+
+._4jy3 {
+  line-height: 22px;
+}
+
+._42ft {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+._4jy2 {
+  color: #fff;
+}
+
+._4jy0 {
+  transition: 200ms cubic-bezier(0.08, 0.52, 0.52, 1) background-color,
+    200ms cubic-bezier(0.08, 0.52, 0.52, 1) box-shadow,
+    200ms cubic-bezier(0.08, 0.52, 0.52, 1) transform;
+}
+
+._4jy0 {
+  border: 1px solid;
+  border-radius: 2px;
+  box-sizing: content-box;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  justify-content: center;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+a {
+  color: #385898;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#loginform p {
+  line-height: 16px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.reset_password {
+  padding-left: 100px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
