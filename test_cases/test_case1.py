@@ -9,18 +9,27 @@ driver = webdriver.Chrome()
 try:
     driver.get(
         'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
-except:
-    print("Error")
+    driver.maximize_window()
+
+    # write email of the user
+    time.sleep(2)
+    email_box = driver.find_element_by_id('inputEmail')
+    email_box.send_keys('bobross@outlook.com')
+
+    # write password of the user
+    time.sleep(2)
+    password_box = driver.find_element_by_id('inputPassword')
+    password_box.send_keys('test')
+
+    # click sign button
+    time.sleep(2)
+    sign_button = driver.find_element_by_id('sign-button')
+    sign_button.click()
+
+except Exception as e:
+    print("Error: ", e)
     driver.quit()
 
-time.sleep(5)  # Let the user actually see something!
-
-# search_box = driver.find_element_by_name('q')
-
-# search_box.send_keys('ChromeDriver')
-
-# search_box.submit()
-
-# time.sleep(5)  # Let the user actually see something!
+time.sleep(5)
 
 driver.quit()
