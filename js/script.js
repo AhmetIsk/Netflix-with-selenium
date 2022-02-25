@@ -1,3 +1,5 @@
+import 'user-data-mock.js';
+
 let inputTouched = {
   email: false,
   password: false,
@@ -24,17 +26,22 @@ loginButton.addEventListener("click", (e) => {
   const username = inputEmail.value;
   const password = inputPassword.value;
 
-  if (username === "bobross@outlook.com" && password === "test") {
-    // If the credentials are valid, show an alert box and reload the page
-    document.location.href = "homepage.html";
-  } else if (username === "bobross@outlook.com" && password !== "test") {
-    wrongPassword.style.display = "block";
-  } else if (username !== "bobross@outlook.com") {
-    wrongEmail.style.display = "block";
-  } else {
-    // Otherwise, make the login error message show (change its oppacity)
-    document.location.reload();
-  }
+  netflix_users.map(user => {
+    console.log(user.email);
+    console.log(username);
+
+    if (username === user.email && password === user.password) {
+      // If the credentials are valid, show an alert box and reload the page
+      document.location.href = "homepage.html";
+    } else if (username === user.email && password !== user.password) {
+      wrongPassword.style.display = "block";
+    } else if (username !== user.email) {
+      wrongEmail.style.display = "block";
+    } else {
+      // Otherwise, make the login error message show (change its oppacity)
+      document.location.reload();
+    }
+  });
 });
 
 const inputOnBlur = (ev) => {

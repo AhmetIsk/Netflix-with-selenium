@@ -2,6 +2,8 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
@@ -13,28 +15,51 @@ Case#3: Verify if the 'Enter' key of the keyboard is working correctly on the lo
 Case#4:	Verify the login page for both, when the field is blank and Submit button is clicked.
 """
 
+
 class TestStringMethods(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Chrome(options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
 
     def test(self):
         time.sleep(2)
-        email_box = self.driver.find_element(By.ID, "inputEmail")
-        email_box.send_keys('bobross@outlook.com')
+        wait = WebDriverWait(self.driver, 10)
+        netflix_login_window = self.driver.current_window_handle
+        assert len(self.driver.window_handles) == 1
 
-        # write password of the user
-        time.sleep(2)
-        password_box = self.driver.find_element(By.ID, "inputPassword")
-        password_box.send_keys('test')
+        # click facebook login hyperlink
+        fb_loginpage_btn = self.driver.find_element(By.ID, "fb-login")
+        fb_loginpage_btn.click()
+        wait.until(EC.number_of_windows_to_be(2))
+        for window_handle in self.driver.window_handles:
+            if window_handle != netflix_login_window:
+                self.driver.switch_to.window(window_handle)
+                break
 
-        # click sign button
+        # write email of the user for facebook account
         time.sleep(2)
-        sign_button = self.driver.find_element(By.ID, "sign-button")
-        sign_button.click()
+        fb_email_box = self.driver.find_element(By.ID, 'email')
+        fb_email_box.send_keys('bobross@outlook.com')
+
+        # write password of the user for facebook account
+        time.sleep(2)
+        fb_password_box = self.driver.find_element(By.ID, "pass")
+        fb_password_box.send_keys('test')
+
+        # click sign in button for facebook account
+        time.sleep(2)
+        fb_sign_button = self.driver.find_element(By.ID, "login-facebook")
+        fb_sign_button.click()
+        wait.until(EC.number_of_windows_to_be(2))
+        for window_handle in self.driver.window_handles:
+            if window_handle != netflix_login_window:
+                self.driver.switch_to.window(window_handle)
+                break
         time.sleep(3)
 
         success_text = self.driver.find_element(By.ID, "success-login-text")

@@ -1,3 +1,5 @@
+import 'user-data-mock.js';
+
 let inputTouched = {
   email: false,
   password: false,
@@ -16,16 +18,18 @@ loginWithFacebookButton.addEventListener("click", (e) => {
   const username = facebookEmail.value;
   const password = facebookPassword.value;
 
-  if (username === "bobross@outlook.com" && password === "test") {
-    // If the credentials are valid, show an alert box and reload the page
-    window.open("homepage.html");
-    window.close();
-  } else if (username === "bobross@outlook.com" && password !== "test") {
-    wrongPassword.style.display = "block";
-  } else if (username !== "bobross@outlook.com") {
-    wrongEmail.style.display = "block";
-  } else {
-    // Otherwise, make the login error message show (change its oppacity)
-    document.location.reload();
-  }
+  facebook_users.map(user => {
+    if (username === user.email && password === user.password) {
+      // If the credentials are valid, show an alert box and reload the page
+      window.close();
+      window.open("homepage.html", "_blank");
+    } else if (username === user.email && password !== user.password) {
+      wrongPassword.style.display = "block";
+    } else if (username !== user.email) {
+      wrongEmail.style.display = "block";
+    } else {
+      // Otherwise, make the login error message show (change its oppacity)
+      document.location.reload();
+    }
+  });
 });
