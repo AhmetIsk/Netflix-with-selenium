@@ -5,6 +5,13 @@ from selenium.webdriver.common.by import By
 import time
 import os
 
+"""
+This cases will be tested on Netflix login page
+Case#1:	Verify if a user will be able to login with a valid username and valid password.
+Case#2: Verify if a user cannot login with a valid username and an invalid password.
+Case#3: Verify if the 'Enter' key of the keyboard is working correctly on the login page.
+Case#4:	Verify the login page for both, when the field is blank and Submit button is clicked.
+"""
 
 class TestStringMethods(unittest.TestCase):
 

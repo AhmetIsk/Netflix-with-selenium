@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 import time
 import os
 
+"""
+Case#1: Verify if the site is rendered correctly for the smaller screens. (responsiveness test).
+"""
 
 class TestStringMethods(unittest.TestCase):
 

@@ -5,6 +5,10 @@ from selenium.webdriver.common.by import By
 import time
 import os
 
+"""
+Case#1: Verify that all the labels and controls including text-boxes, buttons, and links are present on the Login page.
+Case#2: Check if the password is in masked form when typed in the password field.
+"""
 
 class TestStringMethods(unittest.TestCase):
 

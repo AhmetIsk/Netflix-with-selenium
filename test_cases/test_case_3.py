@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 import time
 import os
 
+"""
+Case#1: Verify if the font, text color, and color coding of the Login page is as per the standard.
+"""
 
 class TestStringMethods(unittest.TestCase):
 
