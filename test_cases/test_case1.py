@@ -2,14 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
 import time
-from pathlib import Path
 import os
 
 driver = webdriver.Chrome()
 
 try:
     driver.get(
-        'file:///' + os.getcwd() + '/index.html')
+        'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
 except:
     print("Error")
     driver.quit()
