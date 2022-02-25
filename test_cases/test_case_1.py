@@ -13,6 +13,7 @@ Case#3: Verify if the 'Enter' key of the keyboard is working correctly on the lo
 Case#4:	Verify the login page for both, when the field is blank and Submit button is clicked.
 """
 
+
 class TestStringMethods(unittest.TestCase):
 
     def setUp(self):
@@ -22,6 +23,7 @@ class TestStringMethods(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
+        # write email of the user
         time.sleep(2)
         email_box = self.driver.find_element(By.ID, "inputEmail")
         email_box.send_keys('bobross@outlook.com')
@@ -31,7 +33,7 @@ class TestStringMethods(unittest.TestCase):
         password_box = self.driver.find_element(By.ID, "inputPassword")
         password_box.send_keys('test')
 
-        # click sign button
+        # click sign in button
         time.sleep(2)
         sign_button = self.driver.find_element(By.ID, "sign-button")
         sign_button.click()

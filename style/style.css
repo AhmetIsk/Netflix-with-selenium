@@ -145,6 +145,7 @@ body {
   display: table;
   width: 100%;
 }
+
 .message-container {
   display: table-cell;
   vertical-align: middle;
@@ -185,6 +186,7 @@ body {
 .help a {
   text-decoration: none;
 }
+
 .help a:hover {
   text-decoration: underline;
 }

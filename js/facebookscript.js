@@ -18,7 +18,7 @@ loginWithFacebookButton.addEventListener("click", (e) => {
 
   if (username === "bobross@outlook.com" && password === "test") {
     // If the credentials are valid, show an alert box and reload the page
-    window.open("homepage.html", "_blank");
+    window.open("homepage.html");
     window.close();
   } else if (username === "bobross@outlook.com" && password !== "test") {
     wrongPassword.style.display = "block";
