@@ -1,12 +1,15 @@
-import time
-
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.common.by import By
+import time
+from pathlib import Path
+import os
 
-driver = webdriver.Chrome('.\chromedriver.exe')
+driver = webdriver.Chrome()
 
 try:
     driver.get(
-        'file:///C:\\Users\\boraf\\OneDrive\\Masaüstü\\Netflix-with-selenium\\index.html')
+        'file:///' + os.getcwd() + '/index.html')
 except:
     print("Error")
     driver.quit()
