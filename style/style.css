@@ -57,7 +57,7 @@ body {
   text-decoration: underline;
 }
 
-.login {
+#login {
   margin: 0 auto;
   width: 310px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -65,7 +65,7 @@ body {
   padding: 30px 70px 143px 70px;
 }
 
-.login h1 {
+#login h1 {
   color: white;
   padding-bottom: 10px;
 }
@@ -135,6 +135,22 @@ body {
   margin-top: 0;
   font-size: 0.8rem;
   margin-top: 6px;
+}
+
+.wrong-password {
+  background: #e87c03;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 0 16px;
+  display: table;
+  width: 100%;
+}
+.message-container {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 20px;
 }
 
 .signup-link:hover {
@@ -225,7 +241,7 @@ body {
     margin-left: 22px;
   }
 
-  .login {
+  #login {
     padding: 0 10px 0 10px;
     width: 100%;
   }
