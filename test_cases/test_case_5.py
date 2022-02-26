@@ -4,6 +4,9 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
 import time
 import os
+from PIL import Image, ImageDraw
+from io import BytesIO
+import numpy as np
 
 """
 Case: Check if the password is in masked form when typed in the password field.
@@ -23,22 +26,52 @@ class TestPasswordMethods(unittest.TestCase):
     def test(self):
         print('Case#2')
         # look for password box properties
-        time.sleep(2)
         password_box = self.driver.find_element(By.ID, "inputPassword")
-        password_box.get_attribute('type')
-        print('password_box')
-        print(password_box)
-        print('password_box')
+        password_box.send_keys('test')
 
-        time.sleep(3)
+        location = password_box.location
+        size = password_box.size
+        png = self.driver.get_screenshot_as_png()
+        self.driver.quit()
 
-        if password_box == "":
+        im = Image.open(BytesIO(png))
+        left = location['x'] + 150
+        top = location['y']
+        right = location['x'] + size['width']
+        bottom = location['y'] + 150
+
+        im = im.crop((left, top, right, bottom))
+        # im.save('test_image.png')
+
+        script_dir = os.path.dirname(__file__)
+        current_file = "\comparison_image.png"
+        img = Image.open(
+            script_dir + current_file)
+
+        pic1 = im.convert("L")
+        pic2 = img.convert("L")
+        raw1 = pic1.getdata()
+        raw2 = pic2.getdata()
+
+        # checks two picture is same by looking its pixels
+        diff_pix = np.subtract(raw1, raw2)
+
+        loc = 0
+        for i in diff_pix:
+            if i > 25:
+                break
+            else:
+                loc += 1
+
+        x_loc = loc % 164
+        y_loc = loc // 164
+
+        if x_loc == 0 and y_loc == 150:
             testValue = True
         else:
             testValue = False
         message = "Test value is not true."
         self.assertTrue(testValue, message)
-        self.driver.quit()
 
 
 if __name__ == '__main__':
