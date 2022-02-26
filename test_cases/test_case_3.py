@@ -6,7 +6,7 @@ import time
 import os
 
 """
-Case#1: Verify if the font, text color, and color coding of the Login page is as per the standard.
+Case: Verify if the font, text color, and color coding of the Login page is as per the standard.
 """
 
 

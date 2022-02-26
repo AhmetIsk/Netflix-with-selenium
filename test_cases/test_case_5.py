@@ -6,7 +6,7 @@ import time
 import os
 
 """
-Case#1: Check if the password is in masked form when typed in the password field.
+Case: Check if the password is in masked form when typed in the password field.
 """
 
 

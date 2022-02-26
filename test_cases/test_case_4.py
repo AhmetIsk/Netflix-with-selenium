@@ -6,7 +6,7 @@ import time
 import os
 
 """
-Case#1: Verify if the site is rendered correctly for the smaller screens. (responsiveness test).
+Case: Verify if the site is rendered correctly for the smaller screens. (responsiveness test).
 """
 
 

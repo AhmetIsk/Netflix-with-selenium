@@ -11,8 +11,8 @@ import os
 """
 This cases will be tested on Facebook login page
 
-Case#1: Verify if a user cannot login with a valid username and an invalid password.
-Case#2: Verify if a user will be able to login with a valid username and valid password.
+Case: Verify if a user cannot login with a valid username and an invalid password.
+Case: Verify if a user will be able to login with a valid username and valid password.
 """
 
 
