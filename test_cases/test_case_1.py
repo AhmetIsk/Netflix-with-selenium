@@ -65,24 +65,20 @@ class TestInputMethods2(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
-        email_box = self.driver.find_element(By.ID, "inputEmail")
-        password_box = self.driver.find_element(By.ID, "inputPassword")
-        sign_button = self.driver.find_element(By.ID, "sign-button")
         print('Case#2: Verify sign button is clickable.')
         # valid username
         time.sleep(1)
-        email_box.clear()
+        email_box = self.driver.find_element(By.ID, "inputEmail")
         email_box.send_keys('bobross@outlook.com')
 
         # valid password
         time.sleep(1)
-        password_box.clear()
+        password_box = self.driver.find_element(By.ID, "inputPassword")
         password_box.send_keys('test')
 
         # click button
         time.sleep(1)
-        otac_text = self.driver.find_element(By.ID, "otac")
-        otac_text.click()
+        sign_button = self.driver.find_element(By.ID, "sign-button")
         sign_button.click()
 
         #
