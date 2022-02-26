@@ -48,11 +48,11 @@ class TestStringMethods(unittest.TestCase):
         wp_box_property = wrong_pass_box.value_of_css_property('display')
         print(wp_box_property)
         if wp_box_property == 'block':
-            testValue = False
-        else:
             testValue = True
-        message = "Case#1 is passed!"
-        self.assertFalse(testValue, message)
+        else:
+            testValue = False
+        message = "Case#1 is failed!"
+        self.assertTrue(testValue, message)
 
         print('Case#2: ')
         # valid username
