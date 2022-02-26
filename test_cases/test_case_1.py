@@ -54,6 +54,7 @@ class TestInputMethods(unittest.TestCase):
 
         self.driver.quit()
 
+
 class TestInputMethods2(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
@@ -62,7 +63,7 @@ class TestInputMethods2(unittest.TestCase):
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
-        
+
     def test(self):
         email_box = self.driver.find_element(By.ID, "inputEmail")
         password_box = self.driver.find_element(By.ID, "inputPassword")
