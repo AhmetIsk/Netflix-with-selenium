@@ -9,10 +9,13 @@ import os
 Case#1: Verify if the font, text color, and color coding of the Login page is as per the standard.
 """
 
+
 class TestLogoProperties(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Chrome(options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
@@ -26,13 +29,16 @@ class TestLogoProperties(unittest.TestCase):
             testValue = True
         else:
             testValue = False
-        
+
         self.assertTrue(testValue, "Test value is not true.")
         self.driver.quit()
 
+
 class TestLoginTextProperties(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Chrome(options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
@@ -49,13 +55,16 @@ class TestLoginTextProperties(unittest.TestCase):
             testValue = True
         else:
             testValue = False
-        
+
         self.assertTrue(testValue, "Test value is not true.")
         self.driver.quit()
 
+
 class TestLoginButtonProperties(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Chrome(options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
@@ -63,17 +72,21 @@ class TestLoginButtonProperties(unittest.TestCase):
     def test(self):
         print("Case: Verify sign button has correct CSS properties.")
         sign_in_button = self.driver.find_element(By.ID, "sign-button")
-        sign_in_button_background_color = sign_in_button.value_of_css_property("background-color")
+        sign_in_button_background_color = sign_in_button.value_of_css_property(
+            "background-color")
         sign_in_button_color = sign_in_button.value_of_css_property("color")
-        sign_in_button_font_size = sign_in_button.value_of_css_property("font-size")
-        sign_in_button_border_radius = sign_in_button.value_of_css_property("border-radius")
+        sign_in_button_font_size = sign_in_button.value_of_css_property(
+            "font-size")
+        sign_in_button_border_radius = sign_in_button.value_of_css_property(
+            "border-radius")
         if sign_in_button_background_color == "rgba(255, 0, 0, 1)" and sign_in_button_color == "rgba(255, 255, 255, 1)" and sign_in_button_font_size == "16.8px" and sign_in_button_border_radius == "5px":
             testValue = True
         else:
             testValue = False
-        
+
         self.assertTrue(testValue, "Test value is not true.")
         self.driver.quit()
+
 
 if __name__ == '__main__':
     unittest.main()

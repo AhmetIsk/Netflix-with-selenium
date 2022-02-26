@@ -16,7 +16,7 @@ Case#2: Verify if a user will be able to login with a valid username and valid p
 """
 
 
-class TestStringMethods(unittest.TestCase):
+class TestFbLoginMethods(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -68,7 +68,7 @@ class TestStringMethods(unittest.TestCase):
         self.driver.quit()
 
 
-class TestInputMethods2(unittest.TestCase):
+class TestFbLoginMethods2(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
