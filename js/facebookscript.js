@@ -1,4 +1,17 @@
-import 'user-data-mock.js';
+var facebook_users = [
+  {
+    firstName: 'Bob',
+    lastName: 'Ross',
+    email: 'bobross@outlook.com',
+    password: 'test'
+  },
+  {
+    firstName: 'Nina',
+    lastName: 'Williams',
+    email: 'ninawilliams@outlook.com',
+    password: 'tekkenchamp'
+  }
+];
 
 let inputTouched = {
   email: false,
@@ -18,18 +31,40 @@ loginWithFacebookButton.addEventListener("click", (e) => {
   const username = facebookEmail.value;
   const password = facebookPassword.value;
 
-  facebook_users.map(user => {
+  let userpass = false;
+  let passwordpass = false;
+
+  facebook_users.some(user => {
     if (username === user.email && password === user.password) {
       // If the credentials are valid, show an alert box and reload the page
-      window.close();
-      window.open("homepage.html", "_blank");
+      userpass = true;
+      passwordpass = true;
+      return true;
     } else if (username === user.email && password !== user.password) {
-      wrongPassword.style.display = "block";
+      userpass = true;
+      passwordpass = false;
+      return true;
     } else if (username !== user.email) {
-      wrongEmail.style.display = "block";
+      userpass = false;
+      return false;
     } else {
       // Otherwise, make the login error message show (change its oppacity)
-      document.location.reload();
+      userpass = false;
+      passwordpass = false;
+      return false;
     }
   });
+
+  if (userpass && passwordpass) {
+    // If the credentials are valid, show an alert box and reload the page
+    window.close();
+    window.open("homepage.html", "_blank");
+  } else if (userpass && !passwordpass) {
+    wrongPassword.style.display = "block";
+  } else if (!userpass) {
+    wrongEmail.style.display = "block";
+  } else {
+    // Otherwise, make the login error message show (change its oppacity)
+    document.location.reload();
+  }
 });

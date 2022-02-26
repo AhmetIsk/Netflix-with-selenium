@@ -39,8 +39,8 @@ class TestStringMethods(unittest.TestCase):
         time.sleep(2)
         sign_button = self.driver.find_element(By.ID, "sign-button")
         sign_button.click()
-        time.sleep(3)
 
+        time.sleep(6)
         success_text = self.driver.find_element(By.ID, "success-login-text")
         success_text = success_text.get_attribute("innerHTML")
 
@@ -52,6 +52,7 @@ class TestStringMethods(unittest.TestCase):
         message = "Test value is not true."
         # assertTrue() to check true of test value
         self.assertTrue(testValue, message)
+
         self.driver.quit()
 
 

@@ -1,4 +1,17 @@
-import 'user-data-mock.js';
+var netflix_users = [
+  {
+    firstName: 'Bob',
+    lastName: 'Ross',
+    email: 'bobross@outlook.com',
+    password: 'test'
+  },
+  {
+    firstName: 'Tyler',
+    lastName: 'Durden',
+    email: 'therealdurden@outlook.com',
+    password: 'mrsoapguy2001'
+  }
+];
 
 let inputTouched = {
   email: false,
@@ -26,22 +39,41 @@ loginButton.addEventListener("click", (e) => {
   const username = inputEmail.value;
   const password = inputPassword.value;
 
-  netflix_users.map(user => {
-    console.log(user.email);
-    console.log(username);
+  let userpass = false;
+  let passwordpass = false;
 
+  netflix_users.some(user => {
     if (username === user.email && password === user.password) {
       // If the credentials are valid, show an alert box and reload the page
-      document.location.href = "homepage.html";
+      userpass = true;
+      passwordpass = true;
+      return true;
     } else if (username === user.email && password !== user.password) {
-      wrongPassword.style.display = "block";
+      userpass = true;
+      passwordpass = false;
+      return true;
     } else if (username !== user.email) {
-      wrongEmail.style.display = "block";
+      userpass = false;
+      return false;
     } else {
       // Otherwise, make the login error message show (change its oppacity)
-      document.location.reload();
+      userpass = false;
+      passwordpass = false;
+      return false;
     }
   });
+
+  if (userpass && passwordpass) {
+    // If the credentials are valid, show an alert box and reload the page
+    document.location.href = "homepage.html";
+  } else if (userpass && !passwordpass) {
+    wrongPassword.style.display = "block";
+  } else if (!userpass) {
+    wrongEmail.style.display = "block";
+  } else {
+    // Otherwise, make the login error message show (change its oppacity)
+    document.location.reload();
+  }
 });
 
 const inputOnBlur = (ev) => {
