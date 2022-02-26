@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
 import time
 import os
-from PIL import Image, ImageDraw
+from PIL import Image
 from io import BytesIO
 import numpy as np
 
