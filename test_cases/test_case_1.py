@@ -45,15 +45,15 @@ class TestInputMethods(unittest.TestCase):
         time.sleep(1)
         wrong_pass_box = self.driver.find_element(By.ID, "wrong-pass")
         wp_box_property = wrong_pass_box.value_of_css_property('display')
-        print(wp_box_property)
         if wp_box_property == 'block':
             testValue = True
         else:
             testValue = False
         message = "Case#1 is failed!"
         self.assertTrue(testValue, message)
-        
+
         self.driver.quit()
+
 
 class TestInputMethods2(unittest.TestCase):
     def setUp(self):
@@ -63,7 +63,7 @@ class TestInputMethods2(unittest.TestCase):
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
-        
+
     def test(self):
         email_box = self.driver.find_element(By.ID, "inputEmail")
         password_box = self.driver.find_element(By.ID, "inputPassword")
@@ -97,7 +97,6 @@ class TestInputMethods2(unittest.TestCase):
         message = "Test value is not true."
         self.assertTrue(testValue, message)
         self.driver.quit()
-
 
 
 if __name__ == '__main__':
