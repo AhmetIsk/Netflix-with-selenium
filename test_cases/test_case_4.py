@@ -9,40 +9,41 @@ import os
 Case#1: Verify if the site is rendered correctly for the smaller screens. (responsiveness test).
 """
 
+
 class TestStringMethods(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Chrome(options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
         self.driver.maximize_window()
 
     def test(self):
         time.sleep(2)
-        email_box = self.driver.find_element(By.ID, "inputEmail")
-        email_box.send_keys('bobross@outlook.com')
+        self.driver.set_window_size(700, 700)
 
-        # write password of the user
-        time.sleep(2)
-        password_box = self.driver.find_element(By.ID, "inputPassword")
-        password_box.send_keys('test')
+        login_css = self.driver.find_element(By.ID, "login")
+        login_padding = login_css.value_of_css_property('padding')
 
-        # click sign button
-        time.sleep(2)
-        sign_button = self.driver.find_element(By.ID, "sign-button")
-        sign_button.click()
-        time.sleep(3)
-
-        success_text = self.driver.find_element(By.ID, "success-login-text")
-        success_text = success_text.get_attribute("innerHTML")
-
-        if success_text == "Successfully logged in!":
-            testValue = True
+        if login_padding == '0px 10px':
+            testValue1 = True
         else:
-            testValue = False
-        # error message in case if test case got failed
-        message = "Test value is not true."
-        # assertTrue() to check true of test value
+            testValue1 = False
+
+        time.sleep(2)
+        self.driver.set_window_size(900, 700)
+        login_padding = login_css.value_of_css_property('padding')
+
+        time.sleep(2)
+        if login_padding == '30px 70px 143px':
+            testValue2 = True
+        else:
+            testValue2 = False
+
+        testValue = testValue1 and testValue2
+        message = "Case#1 is failed!"
         self.assertTrue(testValue, message)
         self.driver.quit()
 
