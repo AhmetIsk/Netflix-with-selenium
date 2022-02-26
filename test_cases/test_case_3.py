@@ -18,8 +18,7 @@ class TestLogoProperties(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
-        time.sleep(2)
-
+        print("Case: Verify Netflix Logo has correct CSS properties.")
         logo = self.driver.find_element(By.CLASS_NAME, "img-logo")
         logo_height = logo.value_of_css_property("height")
         logo_margin = logo.value_of_css_property("margin-left")
@@ -39,6 +38,7 @@ class TestLoginTextProperties(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
+        print("Case: Verify sign in text has correct CSS properties.")
         otac = self.driver.find_element(By.ID, "otac")
         otac_color = otac.value_of_css_property("color")
         otac_padding = otac.value_of_css_property("padding-bottom")
@@ -61,6 +61,7 @@ class TestLoginButtonProperties(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
+        print("Case: Verify sign button has correct CSS properties.")
         sign_in_button = self.driver.find_element(By.ID, "sign-button")
         sign_in_button_background_color = sign_in_button.value_of_css_property("background-color")
         sign_in_button_color = sign_in_button.value_of_css_property("color")
