@@ -69,26 +69,17 @@ class TestStringMethods(unittest.TestCase):
         sign_button = self.driver.find_element(By.ID, "sign-button")
         sign_button.click()
 
-        # check wrong password box's property
+        #
         time.sleep(1)
-        wrong_pass_box = self.driver.find_element(By.ID, "wrong-pass")
-        wp_box_property = wrong_pass_box.value_of_css_property('display')
-        if wp_box_property == "display":
+        success_text = self.driver.find_element(By.ID, "success-login-text")
+        success_text = success_text.get_attribute("innerHTML")
+
+        if success_text == "Successfully logged in!":
             testValue = True
         else:
             testValue = False
-        message = "Case#1 is failed!"
+        message = "Test value is not true."
         self.assertTrue(testValue, message)
-
-        # success_text = self.driver.find_element(By.ID, "success-login-text")
-        # success_text = success_text.get_attribute("innerHTML")
-
-        # if success_text == "Successfully logged in!":
-        #     testValue = True
-        # else:
-        #     testValue = False
-        # message = "Test value is not true."
-        # self.assertTrue(testValue, message)
 
         self.driver.quit()
 
