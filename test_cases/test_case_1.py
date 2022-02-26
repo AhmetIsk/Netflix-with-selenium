@@ -8,10 +8,8 @@ import os
 """
 This cases will be tested on Netflix login page
 
-Case#1: Verify input fields are filled correctly with the given inputs.
-Case#2: Verify sign button is clickable.
-Case#3: Verify if a user cannot login with a valid username and an invalid password.
-Case#4: Verify if a user will be able to login with a valid username and valid password.
+Case#1: Verify if a user cannot login with a valid username and an invalid password.
+Case#2: Verify if a user will be able to login with a valid username and valid password.
 """
 
 
