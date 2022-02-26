@@ -46,7 +46,8 @@ class TestStringMethods(unittest.TestCase):
         time.sleep(1)
         wrong_pass_box = self.driver.find_element(By.ID, "wrong-pass")
         wp_box_property = wrong_pass_box.value_of_css_property('display')
-        if wp_box_property == "display":
+        print(wp_box_property)
+        if wp_box_property == 'block':
             testValue = True
         else:
             testValue = False
@@ -56,17 +57,16 @@ class TestStringMethods(unittest.TestCase):
         print('Case#2: ')
         # valid username
         time.sleep(1)
-        email_box = self.driver.find_element(By.ID, "inputEmail")
+        email_box.clear()
         email_box.send_keys('bobross@outlook.com')
 
         # valid password
         time.sleep(1)
-        password_box = self.driver.find_element(By.ID, "inputPassword")
+        password_box.clear()
         password_box.send_keys('test')
 
         # click button
         time.sleep(1)
-        sign_button = self.driver.find_element(By.ID, "sign-button")
         sign_button.click()
 
         #
