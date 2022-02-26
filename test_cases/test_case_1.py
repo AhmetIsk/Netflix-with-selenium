@@ -25,7 +25,7 @@ class TestInputMethods(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
-        print('Case#1: ')
+        print('Case#1: Verify input fields are filled correctly with the given inputs.')
         # valid username
         time.sleep(1)
         email_box = self.driver.find_element(By.ID, "inputEmail")
@@ -45,14 +45,13 @@ class TestInputMethods(unittest.TestCase):
         time.sleep(1)
         wrong_pass_box = self.driver.find_element(By.ID, "wrong-pass")
         wp_box_property = wrong_pass_box.value_of_css_property('display')
-        print(wp_box_property)
         if wp_box_property == 'block':
             testValue = True
         else:
             testValue = False
         message = "Case#1 is failed!"
         self.assertTrue(testValue, message)
-        
+
         self.driver.quit()
 
 class TestInputMethods2(unittest.TestCase):
@@ -68,7 +67,7 @@ class TestInputMethods2(unittest.TestCase):
         email_box = self.driver.find_element(By.ID, "inputEmail")
         password_box = self.driver.find_element(By.ID, "inputPassword")
         sign_button = self.driver.find_element(By.ID, "sign-button")
-        print('Case#2: ')
+        print('Case#2: Verify sign button is clickable.')
         # valid username
         time.sleep(1)
         email_box.clear()
@@ -97,7 +96,6 @@ class TestInputMethods2(unittest.TestCase):
         message = "Test value is not true."
         self.assertTrue(testValue, message)
         self.driver.quit()
-
 
 
 if __name__ == '__main__':
