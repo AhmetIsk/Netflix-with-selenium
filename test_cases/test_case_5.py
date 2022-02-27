@@ -50,28 +50,39 @@ class TestPasswordMethods(unittest.TestCase):
 
         im = im.crop((left, top, right, bottom))
 
-        im.save('test_image.png')
+        # im.save('test_image_win.png')
         # im.show()
 
         # script_dir = os.path.dirname(__file__)
-        current_file = "test_image.png"
-        img = Image.open(current_file)
+        current_file_win = "test_image_win.png"
+        current_file_mac = "test_image_mac.png"
+        img_win = Image.open(current_file_win)
+        img_mac = Image.open(current_file_mac)
 
-        pic1 = im.convert("L")
-        pic2 = img.convert("L")
-        raw1 = pic1.getdata()
-        raw2 = pic2.getdata()
+        pic_curr = im.convert("L")
+        pic_win = img_win.convert("L")
+        pic_mac = img_mac.convert("L")
+        raw_curr = pic_curr.getdata()
+        raw_win = pic_win.getdata()
+        raw_mac = pic_mac.getdata()
 
         # checks two picture is same by looking its pixels and returns array
-        diff_pix = np.subtract(raw1, raw2)
+        diff_pix_win = np.subtract(raw_curr, raw_win)
+        diff_pix_mac = np.subtract(raw_curr, raw_mac)
 
-        is_diff_pictures = True
-        for i in diff_pix:
+        is_diff_pictures_win = True
+        for i in diff_pix_win:
             if i != 0:
-                is_diff_pictures = False
+                is_diff_pictures_win = False
                 break
 
-        if is_diff_pictures:
+        is_diff_pictures_mac = True
+        for i in diff_pix_mac:
+            if i != 0:
+                is_diff_pictures_mac = False
+                break
+
+        if is_diff_pictures_win or is_diff_pictures_mac:
             testValue = True
         else:
             testValue = False
