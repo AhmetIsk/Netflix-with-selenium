@@ -49,14 +49,15 @@ class TestPasswordMethods(unittest.TestCase):
         bottom = 300
 
         im = im.crop((left, top, right, bottom))
-        pic1 = im.convert("L")
-        # pic1.save('test_image.png')
-        # pic1.show()
+
+        im.save('test_image.png')
+        # im.show()
 
         # script_dir = os.path.dirname(__file__)
         current_file = "test_image.png"
         img = Image.open(current_file)
 
+        pic1 = im.convert("L")
         pic2 = img.convert("L")
         raw1 = pic1.getdata()
         raw2 = pic2.getdata()
