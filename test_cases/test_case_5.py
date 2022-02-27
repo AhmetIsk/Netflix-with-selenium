@@ -45,8 +45,8 @@ class TestPasswordMethods(unittest.TestCase):
         # Setting the points for cropped image
         left = 0
         top = 0
-        right = width - 50
-        bottom = height
+        right = 300
+        bottom = 300
 
         im = im.crop((left, top, right, bottom))
 
