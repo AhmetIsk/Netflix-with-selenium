@@ -17,11 +17,16 @@ class TestPasswordMethods(unittest.TestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()
+        options.add_argument('window-size=700x700')
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.set_capability("loggingPrefs", {"resolution": "1024x768"})
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome(
+            options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
-        self.driver.maximize_window()
+        # self.driver.set_window_size(700, 700)
 
     def test(self):
         print('Case#2')
@@ -29,22 +34,18 @@ class TestPasswordMethods(unittest.TestCase):
         password_box = self.driver.find_element(By.ID, "inputPassword")
         password_box.send_keys('test')
 
-        location = password_box.location
-        size = password_box.size
+        # takes screenshot of the window
         png = self.driver.get_screenshot_as_png()
+
+        time.sleep(5)
         self.driver.quit()
 
         im = Image.open(BytesIO(png))
-        left = location['x'] + 150
-        top = location['y']
-        right = location['x'] + size['width']
-        bottom = location['y'] + 150
-
-        im = im.crop((left, top, right, bottom))
         # im.save('test_image.png')
+        # im.show()
 
         script_dir = os.path.dirname(__file__)
-        current_file = "\comparison_image.png"
+        current_file = "\\test_image.png"
         img = Image.open(
             script_dir + current_file)
 
@@ -53,20 +54,16 @@ class TestPasswordMethods(unittest.TestCase):
         raw1 = pic1.getdata()
         raw2 = pic2.getdata()
 
-        # checks two picture is same by looking its pixels
+        # checks two picture is same by looking its pixels and returns array
         diff_pix = np.subtract(raw1, raw2)
 
-        loc = 0
+        is_diff_pictures = True
         for i in diff_pix:
-            if i > 25:
+            if i != 0:
+                is_diff_pictures = False
                 break
-            else:
-                loc += 1
 
-        x_loc = loc % 164
-        y_loc = loc // 164
-
-        if x_loc == 0 and y_loc == 150:
+        if is_diff_pictures:
             testValue = True
         else:
             testValue = False
