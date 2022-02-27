@@ -20,34 +20,42 @@ class TestPasswordMethods(unittest.TestCase):
         options.add_argument('window-size=700x700')
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
+        options.add_argument('--force-device-scale-factor=1')
         options.set_capability("loggingPrefs", {"resolution": "1024x768"})
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.driver = webdriver.Chrome(
             options=options)
         self.driver.get(
             'file:///' + os.path.dirname(os.getcwd()) + '/index.html')
-        # self.driver.set_window_size(700, 700)
 
     def test(self):
-        print('Case#2')
+        print('Case')
         # look for password box properties
         password_box = self.driver.find_element(By.ID, "inputPassword")
         password_box.send_keys('test')
 
         # takes screenshot of the window
         png = self.driver.get_screenshot_as_png()
-
-        time.sleep(5)
         self.driver.quit()
 
         im = Image.open(BytesIO(png))
+
+        width, height = im.size
+
+        # Setting the points for cropped image
+        left = 0
+        top = 0
+        right = width - 50
+        bottom = height
+
+        im = im.crop((left, top, right, bottom))
+
         # im.save('test_image.png')
         # im.show()
 
-        script_dir = os.path.dirname(__file__)
-        current_file = "\\test_image.png"
-        img = Image.open(
-            script_dir + current_file)
+        # script_dir = os.path.dirname(__file__)
+        current_file = "test_image.png"
+        img = Image.open(current_file)
 
         pic1 = im.convert("L")
         pic2 = img.convert("L")
