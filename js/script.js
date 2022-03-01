@@ -1,16 +1,16 @@
 var netflix_users = [
   {
-    firstName: 'Bob',
-    lastName: 'Ross',
-    email: 'bobross@outlook.com',
-    password: 'test'
+    firstName: "Bob",
+    lastName: "Ross",
+    email: "bobross@outlook.com",
+    password: "test",
   },
   {
-    firstName: 'Tyler',
-    lastName: 'Durden',
-    email: 'therealdurden@outlook.com',
-    password: 'mrsoapguy2001'
-  }
+    firstName: "Tyler",
+    lastName: "Durden",
+    email: "therealdurden@outlook.com",
+    password: "mrsoapguy2001",
+  },
 ];
 
 let inputTouched = {
@@ -42,7 +42,7 @@ loginButton.addEventListener("click", (e) => {
   let userpass = false;
   let passwordpass = false;
 
-  netflix_users.some(user => {
+  netflix_users.some((user) => {
     if (username === user.email && password === user.password) {
       // If the credentials are valid, show an alert box and reload the page
       userpass = true;
@@ -117,3 +117,9 @@ const validatePhone = (email) => {
   const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
   return re.test(String(email).toLowerCase());
 };
+
+function checkLoginState() {
+  FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+  });
+}
